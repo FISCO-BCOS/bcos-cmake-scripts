@@ -11,7 +11,7 @@ jobs:
           name: Setup dependencies
           command: |
             yum install -y epel-release centos-release-scl
-            yum install -y git make gcc-c++ cmake3 devtoolset-7
+            yum install -y git make gcc-c++ cmake3 devtoolset-7 lcov
       - checkout
       - run:
           name: test_cmake

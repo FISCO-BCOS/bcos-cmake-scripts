@@ -1,5 +1,5 @@
 #------------------------------------------------------------------------------
-# Top-level CMake file for FISCO-BCOS.
+# Top-level CMake file for bcos-cmake-scripts.
 # ------------------------------------------------------------------------------
 # Copyright (C) 2021 FISCO BCOS.
 # SPDX-License-Identifier: Apache-2.0
@@ -17,6 +17,7 @@
 #------------------------------------------------------------------------------
 cmake_minimum_required(VERSION 3.10)
 list(APPEND CMAKE_MODULE_PATH ../)
+set(BCOS_DOXYGEN_DIR "${CMAKE_CURRENT_SOURCE_DIR}/../")
 
 #init hunter
 include(HunterGate)
@@ -29,3 +30,7 @@ project(bcos-cmake-scripts-test VERSION "3.0")
 include(Options)
 configure_project()
 include(CompilerSettings)
+include(BuildDocs)
+
+include(Coverage)
+config_coverage("")
