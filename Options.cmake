@@ -71,6 +71,7 @@ macro(configure_project)
     if (NOT DEFINED VERSION_SUFFIX)
         set(VERSION_SUFFIX "")
     endif()
+    print_config(${NAME})
 endmacro()
 
 macro(print_config NAME)
