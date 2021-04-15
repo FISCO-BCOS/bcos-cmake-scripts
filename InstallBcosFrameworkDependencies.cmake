@@ -3,3 +3,5 @@ find_package(Boost CONFIG REQUIRED log chrono system filesystem iostreams thread
 find_package(Protobuf CONFIG REQUIRED)
 find_package(tbb)
 find_package(bcos-framework CONFIG REQUIRED)
+get_target_property(BCOS_FRAMEWORK_INCLUDE bcos-framework::utilities INTERFACE_INCLUDE_DIRECTORIES)
+include_directories(${BCOS_FRAMEWORK_INCLUDE}/bcos-framework)
