@@ -18,12 +18,10 @@
 # ------------------------------------------------------------------------------
 find_package(Doxygen QUIET)
 if(DOXYGEN_FOUND)
-if (NOT BCOS_DOXYGEN_DIR)
-    set(BCOS_DOXYGEN_DIR "${CMAKE_CURRENT_SOURCE_DIR}/bcos-cmake-scripts")
-endif()
+
 # Requirements: doxygen graphviz
-  set(doxyfile_in "${BCOS_DOXYGEN_DIR}/.Doxyfile.in")
-  set(doxyfile "${BCOS_DOXYGEN_DIR}/Doxyfile")
+  set(doxyfile_in "${CMAKE_CURRENT_LIST_DIR}/.Doxyfile.in")
+  set(doxyfile "${CMAKE_CURRENT_BINARY_DIR}/Doxyfile")
   configure_file(${doxyfile_in} ${doxyfile} @ONLY)
 # Add doc target
 add_custom_target(doc COMMAND ${DOXYGEN_EXECUTABLE} ${doxyfile}
