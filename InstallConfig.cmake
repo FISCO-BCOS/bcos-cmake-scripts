@@ -14,7 +14,7 @@
 # limitations under the License.
 # ------------------------------------------------------------------------------
 # File: InstallConfig.cmake
-# Function: Public cmake files for building projects based on hunter 
+# Function: Public cmake files for building projects based on hunter
 #           may be used by multiple projects
 # ------------------------------------------------------------------------------
 
@@ -38,12 +38,12 @@ write_basic_package_version_file(
     "${version_config}" COMPATIBILITY SameMajorVersion
 )
 
-if (NOT BCOS_CMAKE_SCRIPTS)
-    set(BCOS_CMAKE_SCRIPTS "bcos-cmake-scripts")
-endif()
+set(CONFIGURE_TEMPLATE_FILE_PATH "${CMAKE_CURRENT_BINARY_DIR}/templates/Config.cmake.in")
+set(CONFIGURE_TEMPLATE_FILE_CONTENT "@PACKAGE_INIT@ \n include(\"\${CMAKE_CURRENT_LIST_DIR}/@TARGETS_EXPORT_NAME@.cmake\") \n check_required_components(\"@PROJECT_NAME@\")")
+file(WRITE "${CONFIGURE_TEMPLATE_FILE_PATH}" ${CONFIGURE_TEMPLATE_FILE_CONTENT})
 
 configure_package_config_file(
-    "${BCOS_CMAKE_SCRIPTS}/templates/Config.cmake.in"
+    "${CONFIGURE_TEMPLATE_FILE_PATH}"
     "${project_config}"
     INSTALL_DESTINATION "${config_install_dir}"
 )
