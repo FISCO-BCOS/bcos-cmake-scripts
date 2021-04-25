@@ -17,12 +17,6 @@
 # Function: Common cmake file for setting compilation environment variables
 # ------------------------------------------------------------------------------
 
-cmake_minimum_required(VERSION 3.15)
-
-project(libabcdedfg)
-
-message("compile is: ${CMAKE_CXX_COMPILER}")
-message("compile id is: ${CMAKE_CXX_COMPILER_ID}")
 if (("${CMAKE_CXX_COMPILER_ID}" MATCHES "GNU") OR ("${CMAKE_CXX_COMPILER_ID}" MATCHES "Clang"))
     find_program(CCACHE_PROGRAM ccache)
     if(CCACHE_PROGRAM)
