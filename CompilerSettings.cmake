@@ -17,6 +17,12 @@
 # Function: Common cmake file for setting compilation environment variables
 # ------------------------------------------------------------------------------
 
+cmake_minimum_required(VERSION 3.15)
+
+project(libabcdedfg)
+
+message("compile is: ${CMAKE_CXX_COMPILER}")
+message("compile id is: ${CMAKE_CXX_COMPILER_ID}")
 if (("${CMAKE_CXX_COMPILER_ID}" MATCHES "GNU") OR ("${CMAKE_CXX_COMPILER_ID}" MATCHES "Clang"))
     find_program(CCACHE_PROGRAM ccache)
     if(CCACHE_PROGRAM)
@@ -32,7 +38,7 @@ if (("${CMAKE_CXX_COMPILER_ID}" MATCHES "GNU") OR ("${CMAKE_CXX_COMPILER_ID}" MA
     # and that are easy to avoid.  Also enable some extra warning flags that are not
     # enabled by -Wall.   Finally, treat at warnings-as-errors, which forces developers
     # to fix warnings as they arise, so they don't accumulate "to be fixed later".
-    add_compile_options(-Werror)
+    # add_compile_options(-Werror)
     add_compile_options(-Wall)
     add_compile_options(-pedantic)
     add_compile_options(-Wextra)
