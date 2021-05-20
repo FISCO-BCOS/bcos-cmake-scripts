@@ -17,11 +17,11 @@
 # Function: Define coverage related functions
 # ------------------------------------------------------------------------------
 # REMOVE_FILE_PATTERN eg.: '/usr*' '${CMAKE_SOURCE_DIR}/deps**' '${CMAKE_SOURCE_DIR}/evmc*' ‘${CMAKE_SOURCE_DIR}/fisco-bcos*’
-function(config_coverage REMOVE_FILE_PATTERN)
+function(config_coverage TARGET REMOVE_FILE_PATTERN)
     find_program(LCOV_TOOL lcov)
     message(STATUS "lcov tool: ${LCOV_TOOL}")
     if (LCOV_TOOL)
-        add_custom_target(coverage
+        add_custom_target(${TARGET}
             COMMAND ${LCOV_TOOL} -o ${CMAKE_BINARY_DIR}/coverage.info.in -c -d ${CMAKE_BINARY_DIR}/
             COMMAND ${LCOV_TOOL} -r ${CMAKE_BINARY_DIR}/coverage.info.in ${REMOVE_FILE_PATTERN} -o ${CMAKE_BINARY_DIR}/coverage.info
             COMMAND genhtml -q -o ${CMAKE_BINARY_DIR}/CodeCoverage ${CMAKE_BINARY_DIR}/coverage.info)
