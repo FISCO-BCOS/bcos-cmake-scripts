@@ -13,23 +13,10 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 # ------------------------------------------------------------------------------
-# File: BuildDocs.cmake
-# Function: Documentation build cmake
+# File: CompilerSettings.cmake
+# Function: Common cmake file for setting compilation environment variables
 # ------------------------------------------------------------------------------
-find_package(Doxygen QUIET)
-if(DOXYGEN_FOUND)
-    # Requirements: doxygen graphviz
-      set(doxyfile_in "${CMAKE_CURRENT_LIST_DIR}/.Doxyfile.in")
-      set(doxyfile "${CMAKE_CURRENT_BINARY_DIR}/Doxyfile")
-      configure_file(${doxyfile_in} ${doxyfile} @ONLY)
-elseif()
-    message(WARNING "Doxygen is needed to build the documentation. Please install doxygen and graphviz")
-endif()
-function(buildDoc TARGET)
-  if(DOXYGEN_FOUND)
-    # Add doc target
-    add_custom_target(${TARGET} COMMAND ${DOXYGEN_EXECUTABLE} ${doxyfile}
-                          WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}
-                          COMMENT "Generating documentation with Doxygen..." VERBATIM)
-  endif()
-endfunction()
+
+set(clang_format_file_in ${CMAKE_CURRENT_LIST_DIR}/.clang-format)
+set(clang_format_file "${CMAKE_CURRENT_SOURCE_DIR}/.clang-format")
+configure_file(${clang_format_file_in} ${clang_format_file} @ONLY)
