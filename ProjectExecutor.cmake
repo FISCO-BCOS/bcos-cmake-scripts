@@ -5,8 +5,8 @@ ExternalProject_Add(bcos-executor
         PREFIX ${CMAKE_SOURCE_DIR}/deps
         DOWNLOAD_NO_PROGRESS 1
         DOWNLOAD_NAME executor.tar.gz
-	    URL https://${URL_BASE}/FISCO-BCOS/bcos-executor/archive/153a50bbffce4c9b3f99a088e6843b37f853be04.tar.gz
-        URL_HASH SHA256=f663bf36fcf07460e9c41a6ed215bad598f386bb6559d354e296b868e816cd49
+	      URL https://${URL_BASE}/FISCO-BCOS/bcos-executor/archive/ac6d5d18bddfee86bcc41bedc5636bf7e11dc02e.tar.gz
+        URL_HASH SHA256=2978dc81d730598c919663a569fd14a505879a510345c5d7949d8b72f3df1582
         CMAKE_ARGS -DCMAKE_INSTALL_PREFIX=<INSTALL_DIR>
                    -DBUILD_SHARED_LIBS=off
         BUILD_IN_SOURCE 1
