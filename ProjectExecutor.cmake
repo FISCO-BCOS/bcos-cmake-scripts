@@ -4,7 +4,7 @@ include(GNUInstallDirs)
 ExternalProject_Add(bcos-executor
         PREFIX ${CMAKE_SOURCE_DIR}/deps
         DOWNLOAD_NO_PROGRESS 1
-        DOWNLOAD_NAME executor.tar.gz
+        DOWNLOAD_NAME executor-ac6d5d18.tar.gz
 	      URL https://${URL_BASE}/FISCO-BCOS/bcos-executor/archive/ac6d5d18bddfee86bcc41bedc5636bf7e11dc02e.tar.gz
         URL_HASH SHA256=2978dc81d730598c919663a569fd14a505879a510345c5d7949d8b72f3df1582
         CMAKE_ARGS -DCMAKE_INSTALL_PREFIX=<INSTALL_DIR>
