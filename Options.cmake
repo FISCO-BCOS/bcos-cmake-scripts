@@ -46,14 +46,14 @@ macro(configure_project)
         set(CMAKE_BUILD_TYPE "RelWithDebInfo" CACHE STRING
             "Choose the type of build, options are: Debug Release RelWithDebInfo MinSizeRel." FORCE)
     endif()
-    
+
     default_option(BUILD_STATIC OFF)
 
     #ARCH TYPE
     default_option(ARCH_NATIVE OFF)
 
     if(ARCH_NATIVE)
-        set(MARCH_TYPE "-march=native -mtune=native -fvisibility=hidden -fvisibility-inlines-hidden")
+        set(MARCH_TYPE "-march=native -mtune=generic -fvisibility=hidden -fvisibility-inlines-hidden")
     endif()
 
     # unit tests
