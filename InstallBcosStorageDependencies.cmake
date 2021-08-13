@@ -1,4 +1,5 @@
 hunter_add_package(bcos-storage)
+set(CMAKE_FIND_LIBRARY_SUFFIXES .a ${CMAKE_FIND_LIBRARY_SUFFIXES})
 find_package(bcos-framework CONFIG REQUIRED)
 find_package(zstd CONFIG REQUIRED)
 find_package(RocksDB CONFIG REQUIRED)
