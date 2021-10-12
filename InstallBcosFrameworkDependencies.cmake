@@ -1,4 +1,6 @@
 hunter_add_package(bcos-framework)
+hunter_add_package(jsoncpp)
+find_package(jsoncpp CONFIG REQUIRED)
 find_package(Boost CONFIG REQUIRED log chrono system filesystem iostreams thread program_options)
 find_package(Protobuf CONFIG REQUIRED)
 find_package(tbb)
