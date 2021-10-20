@@ -1,5 +1,3 @@
 hunter_add_package(bcos-rpc)
 find_package(bcos-framework CONFIG REQUIRED)
 find_package(bcos-rpc CONFIG REQUIRED)
-get_target_property(BCOS_RPC_INCLUDE bcos-rpc::rpc INTERFACE_INCLUDE_DIRECTORIES)
-include_directories(${BCOS_RPC_INCLUDE}/bcos-rpc)
