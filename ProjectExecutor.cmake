@@ -51,7 +51,7 @@ set_target_properties(bcos-executor::vm PROPERTIES
   IMPORTED_LINK_INTERFACE_LANGUAGES_DEBUG "CXX"
   INTERFACE_INCLUDE_DIRECTORIES ${EXECUTOR_INCLUDE_DIRS}
   IMPORTED_LOCATION ${EXECUTOR_LIBRARY_PATH}/libvm${EXECUTOR_LIBRARY_SUFFIX}
-  INTERFACE_LINK_LIBRARIES "tbb::tbb;bcos-executor::state;bcos-framework::protocol;bcos-framework::utilities;Boost::program_options;wedpr-crypto::crypto;wedpr-crypto::extend-crypto;${EVMONE_LIB};${KECCAK_LIB};${INTX_LIB};${HERA_LIB};${HERA_BUILDINFO_LIB};${WASMTIME_LIB};evmc::loader;evmc::instructions;${WABT_LIB}"
+  INTERFACE_LINK_LIBRARIES "TBB::tbb;bcos-executor::state;bcos-framework::protocol;bcos-framework::utilities;Boost::program_options;wedpr-crypto::crypto;wedpr-crypto::extend-crypto;${EVMONE_LIB};${KECCAK_LIB};${INTX_LIB};${HERA_LIB};${HERA_BUILDINFO_LIB};${WASMTIME_LIB};evmc::loader;evmc::instructions;${WABT_LIB}"
 )
 add_dependencies(bcos-executor::vm bcos-executor)
 
