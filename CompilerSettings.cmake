@@ -152,7 +152,7 @@ elseif("${CMAKE_CXX_COMPILER_ID}" MATCHES "MSVC")
         message(FATAL_ERROR "Unsupported Visual Studio, supported list: [2017, 2019]. Current MSVC_TOOLSET_VERSION: ${MSVC_TOOLSET_VERSION}")
     endif()
 
-    set(CMAKE_CXX_FLAGS"${CMAKE_CXX_FLAGS} /std:c++17")
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /std:c++17")
 else ()
     message(WARNING "Your compiler is not tested, if you run into any issues, we'd welcome any patches.")
 endif ()
